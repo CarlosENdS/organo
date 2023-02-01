@@ -1,23 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { useState } from 'react';
+import Banner from './componentes/Banner';
+import Formulario from './componentes/Formulario';
+import Time from './componentes/Time';
 
 function App() {
+
+  const times =  [
+    {
+      nome:'Valorant',
+      corPrimaria: '#57c278',
+      corSecundaria: '#d9f7e9'
+    },
+    {
+      nome:'League of Legends',
+      corPrimaria: '#82cffa',
+      corSecundaria: '#e8f8ff'
+    },
+    {
+      nome:'CS:GO',
+      corPrimaria: '#e06b69',
+      corSecundaria: '#fde7e8'
+    },
+    {
+      nome:'Apex',
+      corPrimaria: '#db6ebf',
+      corSecundaria: '#fae9f5'
+    },
+    {
+      nome:'PokeXGames',
+      corPrimaria: '#ffba05',
+      corSecundaria: '#fff5d9'
+    },
+    {
+      nome:'Rocket League',
+      corPrimaria: '#ff8a29',
+      corSecundaria: '#ffeedf'
+    },
+  ]
+
+  const [jogadores, setJogadores] = useState([]);
+
+  
+  const aoNovoJogadorAdicionado = (jogador) => {
+    setJogadores([...jogadores, jogador]);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Banner />
+      <Formulario times={times.map( time => time.nome)} aoJogadorCadastrado={jogador => aoNovoJogadorAdicionado(jogador) }/>
+      
+      {times.map(time => <Time
+        key={time.nome}F
+        nome={time.nome}
+        corPrimaria={time.corPrimaria}
+        corSecundaria={time.corSecundaria} 
+        jogadores={jogadores.filter( jogador => jogador.time === time.nome)}
+        /> )}
     </div>
   );
 }
