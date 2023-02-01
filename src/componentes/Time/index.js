@@ -7,7 +7,7 @@ const Time = ( props ) => {
             <h3 style={{"borderBottomColor": props.corPrimaria}}>{props.nome}</h3>
             <div className='jogadores'>
 
-            {props.jogadores.map( jogador => <Jogador key={jogador.nome} corDeFundo={props.corPrimaria} nome={jogador.nome} cargo={jogador.cargo} imagem={jogador.imagem}/>)}
+            {props.jogadores.map( jogador => <Jogador key={jogador.nome} corDeFundo={props.corPrimaria} nome={jogador.nome} funcao={jogador.funcao} imagem={jogador.imagem}/>)}
             </div>
         </section>
         : ''
