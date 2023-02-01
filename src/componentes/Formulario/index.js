@@ -38,8 +38,8 @@ const Formulario = (props) => {
                 />
                 <CampoTexto
                     obrigatorio={true}
-                    label="funcao"
-                    placeholder="Digite seu funcao"
+                    label="Funcao"
+                    placeholder="Digite sua funcao"
                     valor={funcao}
                     aoAlterado={valor => setFuncao(valor)}
                 />
