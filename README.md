@@ -1,3 +1,6 @@
+#Deploy da Aplicação
+- a aplicação pode ser acessada pelo seguinte [LINK](https://organo-gamma-jade.vercel.app/) do deploy no vercel.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
